@@ -38,7 +38,12 @@ export default {
           title: 'jsx 城市选择',
           key: 'city',
           render: (h, params) => {
-            return (<div>jsx render</div>)
+            const options = this.cityList.map((item) => {
+              return <i-option value={item.value} >{item.label}</i-option>
+            })
+            return (<i-select style="width:100px" value={this.model1} onOn-change={this.getSelect} >
+              {options}
+            </i-select>)
           }
         }
 
@@ -95,7 +100,12 @@ export default {
           label: 'Canberra'
         }
       ],
-      model1: ''
+      model1: 'New York'
+    }
+  },
+  methods: {
+    getSelect(select) {
+      alert(select)
     }
   }
 }
