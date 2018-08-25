@@ -4,6 +4,12 @@
       <h1>iview jsx 使用demo</h1>
       <h2>以table中使用select为例</h2>
     </div>
+    <div class="before-select">
+      <span>城市选择 官方写法:</span>
+      <Select v-model="model1" style="width:200px">
+        <Option v-for="item in cityList" :value="item.value" :key="item.value">{{ item.label }}</Option>
+      </Select>
+    </div>
     <Table :columns="columns1" :data="data1"></Table>
   </div>
 </template>
@@ -53,7 +59,34 @@ export default {
           address: 'Ottawa No. 2 Lake Park',
           date: '2016-10-04'
         }
-      ]
+      ],
+      cityList: [
+        {
+          value: 'New York',
+          label: 'New York'
+        },
+        {
+          value: 'London',
+          label: 'London'
+        },
+        {
+          value: 'Sydney',
+          label: 'Sydney'
+        },
+        {
+          value: 'Ottawa',
+          label: 'Ottawa'
+        },
+        {
+          value: 'Paris',
+          label: 'Paris'
+        },
+        {
+          value: 'Canberra',
+          label: 'Canberra'
+        }
+      ],
+      model1: ''
     }
   }
 }
@@ -69,10 +102,18 @@ export default {
   padding: 20px;
 }
 .head {
-  margin-bottom: 60px;
+  margin-top: 60px;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.before-select {
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+.before-select span {
+  margin-right: 20px;
 }
 </style>
