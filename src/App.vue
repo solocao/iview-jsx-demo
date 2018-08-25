@@ -32,7 +32,16 @@ export default {
         {
           title: 'Address',
           key: 'address'
+        },
+        {
+
+          title: 'jsx 城市选择',
+          key: 'city',
+          render: (h, params) => {
+            return (<div>jsx render</div>)
+          }
         }
+
       ],
       data1: [
         {
